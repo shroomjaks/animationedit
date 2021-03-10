@@ -1,283 +1,334 @@
--- Gui to Lua
--- Version: 3.2
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/IreXion-UI-Library/main/IreXion%20UI%20Library"))()
 
--- Instances:
+local Gui = Library:AddGui({
+	Title = {"Animation Editor", "Made by Lozarth"},
+	ThemeColor = Color3.fromRGB(125, 30, 250),
+	ToggleKey = Enum.KeyCode.RightShift,
+})
 
-local ScreenGui = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local TextLabel = Instance.new("TextLabel")
-local TextLabel_2 = Instance.new("TextLabel")
-local Frame_2 = Instance.new("Frame")
-local UIListLayout = Instance.new("UIListLayout")
-local _2 = Instance.new("TextBox")
-local _4 = Instance.new("TextBox")
-local _3 = Instance.new("TextBox")
-local _1 = Instance.new("TextBox")
-local _5 = Instance.new("TextBox")
-local _6 = Instance.new("TextBox")
-local _7 = Instance.new("TextBox")
+local Tab = Gui:AddTab("Home")
 
---Properties:
+local Category = Tab:AddCategory("Animations")
 
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ResetOnSpawn = false
+local Label = Category:AddLabel("(Only works with animations made by ROBLOX)")
 
-Frame.Parent = ScreenGui
-Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(0.320512801, 0, 0.115727, 0)
-Frame.Size = UDim2.new(0, 335, 0, 50)
+local Box = Category:AddBox("Idle", function(str)
+	game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://"..str
+	game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://"..str
+end)
 
-TextLabel.Parent = Frame
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.Position = UDim2.new(0.0507462695, 0, 0, 0)
-TextLabel.Size = UDim2.new(0, 300, 0, 29)
-TextLabel.Font = Enum.Font.SciFi
-TextLabel.Text = "Animation Editor"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
+local Box = Category:AddBox("Run", function(str)
+	game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://"..str
+end)
 
-TextLabel_2.Parent = Frame
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.Position = UDim2.new(0.0507462695, 0, 0.419999987, 0)
-TextLabel_2.Size = UDim2.new(0, 300, 0, 29)
-TextLabel_2.Font = Enum.Font.SciFi
-TextLabel_2.Text = "(only works with roblox made animations)"
-TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.TextScaled = true
-TextLabel_2.TextSize = 12.000
-TextLabel_2.TextWrapped = true
+local Box = Category:AddBox("Walk", function(str)
+	game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://"..str
+end)
 
-Frame_2.Parent = Frame
-Frame_2.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-Frame_2.BorderSizePixel = 0
-Frame_2.Position = UDim2.new(0, 0, 1, 0)
-Frame_2.Size = UDim2.new(0, 335, 0, 357)
+local Box = Category:AddBox("Jump", function(str)
+	game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://"..str
+end)
 
-UIListLayout.Parent = Frame_2
-UIListLayout.Padding = UDim.new(0, 1)
+local Box = Category:AddBox("Climb", function(str)
+	game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://"..str
+end)
 
-_2.Name = "2"
-_2.Parent = Frame_2
-_2.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-_2.BorderSizePixel = 0
-_2.Size = UDim2.new(0, 335, 0, 50)
-_2.Font = Enum.Font.Arial
-_2.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-_2.PlaceholderText = "Run Animation"
-_2.Text = ""
-_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-_2.TextSize = 24.000
-_2.TextWrapped = true
+local Box = Category:AddBox("Fall", function(str)
+	game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://"..str
+end)
 
-_4.Name = "4"
-_4.Parent = Frame_2
-_4.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-_4.BorderSizePixel = 0
-_4.Size = UDim2.new(0, 335, 0, 50)
-_4.Font = Enum.Font.Arial
-_4.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-_4.PlaceholderText = "Fall Animation"
-_4.Text = ""
-_4.TextColor3 = Color3.fromRGB(255, 255, 255)
-_4.TextSize = 24.000
-_4.TextWrapped = true
+local Box = Category:AddBox("Sit", function(str)
+	game.Players.LocalPlayer.Character.Animate.sit.SitAnim.AnimationId = "rbxassetid://"..str
+end)
 
-_3.Name = "3"
-_3.Parent = Frame_2
-_3.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-_3.BorderSizePixel = 0
-_3.Size = UDim2.new(0, 335, 0, 50)
-_3.Font = Enum.Font.Arial
-_3.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-_3.PlaceholderText = "Jump Animation"
-_3.Text = ""
-_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-_3.TextSize = 24.000
-_3.TextWrapped = true
+local Box = Category:AddBox("Swim", function(str)
+	game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://"..str
+end)
 
-_1.Name = "1"
-_1.Parent = Frame_2
-_1.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-_1.BorderSizePixel = 0
-_1.Size = UDim2.new(0, 335, 0, 50)
-_1.Font = Enum.Font.Arial
-_1.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-_1.PlaceholderText = "Idle Animation"
-_1.Text = ""
-_1.TextColor3 = Color3.fromRGB(255, 255, 255)
-_1.TextSize = 24.000
-_1.TextWrapped = true
+local Box = Category:AddBox("Idle Swim", function(str)
+	game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://"..str
+end)
 
-_5.Name = "5"
-_5.Parent = Frame_2
-_5.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-_5.BorderSizePixel = 0
-_5.Size = UDim2.new(0, 335, 0, 50)
-_5.Font = Enum.Font.Arial
-_5.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-_5.PlaceholderText = "Sit Animation"
-_5.Text = ""
-_5.TextColor3 = Color3.fromRGB(255, 255, 255)
-_5.TextSize = 24.000
-_5.TextWrapped = true
-
-_6.Name = "6"
-_6.Parent = Frame_2
-_6.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-_6.BorderSizePixel = 0
-_6.Size = UDim2.new(0, 335, 0, 50)
-_6.Font = Enum.Font.Arial
-_6.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-_6.PlaceholderText = "Swim Animation"
-_6.Text = ""
-_6.TextColor3 = Color3.fromRGB(255, 255, 255)
-_6.TextSize = 24.000
-_6.TextWrapped = true
-
-_7.Name = "7"
-_7.Parent = Frame_2
-_7.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-_7.BorderSizePixel = 0
-_7.Size = UDim2.new(0, 335, 0, 50)
-_7.Font = Enum.Font.Arial
-_7.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-_7.PlaceholderText = "Idle Swim Animation"
-_7.Text = ""
-_7.TextColor3 = Color3.fromRGB(255, 255, 255)
-_7.TextSize = 24.000
-_7.TextWrapped = true
-
--- Scripts:
-
-local function QWFV_fake_script() -- _2.LocalScript 
-	local script = Instance.new('LocalScript', _2)
-
-	script.Parent.FocusLost:connect(
-		function(enterPressed)
-			if enterPressed then
-				game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://"..script.Parent.Text
+local Dropdown = Category:AddDropdown("Animation Packages", {
+	"Astronaut",
+	"Bubbly",
+	"Confident",
+	"Cartoony",
+	"Cowboy",
+	"Elder",
+	"Knight",
+	"Levitation",
+	"Mage",
+	"Ninja",
+	"Oldschool",
+	"Popstar",
+	"Pirate",
+	"Patrol",
+	"Princess",
+	"Robot",
+	"Stylish",
+	"Sneaky",
+	"Superhero",
+	"Toy",
+	"Vampire",
+	"Werewolf",
+	"Zombie",
+}, function(name)
+	if name == "Astronaut" then
+		game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://891621366"
+		game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://891633237"
+		game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://891636393"
+		game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://891636393"
+		game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://891627522"
+		game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://891609353"
+		game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://891617961"
+		game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://891639666"
+		game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://891663592"
+	else if name == "Bubbly" then
+			game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://910004836"
+			game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://910009958"
+			game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://910025107"
+			game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://910034870"
+			game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://910016857"
+			game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://909997997"
+			game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://910001910"
+			game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://910028158"
+			game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://910030921"
+		else if name == "Confident" then
+				game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://1069977950"
+				game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://1069987858"
+				game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://1070001516"
+				game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://1070017263"
+				game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://1069984524"
+				game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://1069946257"
+				game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://1069973677"
+				game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://1070009914"
+				game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://1070012133"
+			else if name == "Cartoony" then
+					game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://742637544"
+					game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://742638445"
+					game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://742638842"
+					game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://742640026"
+					game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://742637942"
+					game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://742636889"
+					game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://742637151"
+					game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://742639220"
+					game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://742639812"
+				else if name == "Cowboy" then
+						game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://1014390418"
+						game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://1014398616"
+						game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://1014401683"
+						game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://1014421541"
+						game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://1014394726"
+						game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://1014380606"
+						game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://1014384571"
+						game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://1014406523"
+						game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://1014411816"
+					else if name == "Elder" then
+							game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://845397899"
+							game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://845400520"
+							game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://845386501"
+							game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://845403856"
+							game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://845398858"
+							game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://845392038"
+							game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://845396048"
+							game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://845401742"
+							game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://845403127"
+						else if name == "Knight" then
+								game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://657595757"
+								game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://657568135"
+								game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://657564596"
+								game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://657552124"
+								game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://658409194"
+								game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://658360781"
+								game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://657600338"
+								game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://657560551"
+								game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://657557095"
+							else if name == "Levitation" then
+									game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://616006778"
+									game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://616008087"
+									game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://616010382"
+									game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://616013216"
+									game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://616008936"
+									game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://616003713"
+									game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://616005863"
+									game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://616011509"
+									game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://616012453"
+								else if name == "Mage" then
+										game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://707742142"
+										game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://707855907"
+										game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://707861613"
+										game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://707897309"
+										game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://707853694"
+										game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://707826056"
+										game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://707829716"
+										game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://707876443"
+										game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://707894699"
+									else if name == "Ninja" then
+											game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://656117400"
+											game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://656118341"
+											game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://656118852"
+											game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://656121766"
+											game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://656117878"
+											game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://656114359"
+											game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://656115606"
+											game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://656119721"
+											game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://656121397"
+										else if name == "Oldschool" then
+												game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://5319828216"
+												game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://5319831086"
+												game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://5319844329"
+												game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://5319847204"
+												game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://5319841935"
+												game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://5319816685"
+												game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://5319839762"
+												game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://5319850266"
+												game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://5319852613"
+											else if name == "Popstar" then
+													game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://1212900985"
+													game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://1212954651"
+													game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://1212980348"
+													game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://1212980338"
+													game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://1212954642"
+													game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://1213044953"
+													game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://1212900995"
+													game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://1212852603"
+													game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://1212998578"
+												else if name == "Pirate" then
+														game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://750781874"
+														game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://750782770"
+														game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://750783738"
+														game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://750785693"
+														game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://750782230"
+														game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://750779899"
+														game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://750780242"
+														game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://750784579"
+														game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://750785176"
+													else if name == "Patrol" then
+															game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://1149612882"
+															game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://1150842221"
+															game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://1150967949"
+															game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://1151231493"
+															game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://1150944216"
+															game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://1148811837"
+															game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://1148863382"
+															game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://1151204998"
+															game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://1151221899"
+														else if name == "Princess" then
+																game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://941003647"
+																game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://941013098"
+																game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://941015281"
+																game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://941028902"
+																game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://941008832"
+																game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://940996062"
+																game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://941000007"
+																game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://941018893"
+																game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://941025398"
+															else if name == "Robot" then
+																	game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://616088211"
+																	game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://616089559"
+																	game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://616091570"
+																	game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://616095330"
+																	game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://616090535"
+																	game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://616086039"
+																	game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://616087089"
+																	game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://616092998"
+																	game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://616094091"
+																else if name == "Stylish" then
+																		game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://616136790"
+																		game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://616138447"
+																		game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://616140816"
+																		game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://616146177"
+																		game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://616139451"
+																		game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://616133594"
+																		game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://616134815"
+																		game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://616143378"
+																		game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://616144772"
+																	else if name == "Sneaky" then
+																			game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://1132473842"
+																			game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://1132477671"
+																			game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://1132494274"
+																			game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://1132510133"
+																			game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://1132489853"
+																			game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://1132461372"
+																			game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://1132469004"
+																			game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://1132500520"
+																			game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://1132506407"
+																		else if name == "Superhero" then
+																				game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://616111295"
+																				game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://616113536"
+																				game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://616117076"
+																				game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://616122287"
+																				game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://616115533"
+																				game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://616104706"
+																				game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://616108001"
+																				game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://616119360"
+																				game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://616120861"
+																			else if name == "Toy" then
+																					game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://782841498"
+																					game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://782845736"
+																					game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://782842708"
+																					game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://782843345"
+																					game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://782847020"
+																					game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://782843869"
+																					game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://782846423"
+																					game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://782844582"
+																					game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://782845186"
+																				else if name == "Vampire" then
+																						game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://1083445855"
+																						game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://1083450166"
+																						game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://1083462077"
+																						game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://1083473930"
+																						game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://1083455352"
+																						game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://1083439238"
+																						game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://1083443587"
+																						game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://1083464683"
+																						game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://1083467779"
+																					else if name == "Werewolf" then
+																							game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://1083195517"
+																							game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://1083214717"
+																							game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://1083216690"
+																							game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://1083178339"
+																							game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://1083218792"
+																							game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://1083182000"
+																							game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://1083189019"
+																							game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://1083222527"
+																							game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://1083225406"
+																						else if name == "Zombie" then
+																								game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://616158929"
+																								game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://616160636"
+																								game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://616163682"
+																								game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://616168032"
+																								game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://616161997"
+																								game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://616156119"
+																								game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://616157476"
+																								game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://616165109"
+																								game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://616166655"
+																							end
+																						end
+																					end
+																				end
+																			end
+																		end
+																	end
+																end
+															end
+														end
+													end
+												end
+											end
+										end
+									end
+								end
+							end
+						end
+					end
+				end
 			end
 		end
-	)
-end
-coroutine.wrap(QWFV_fake_script)()
-local function LXTXDH_fake_script() -- _4.LocalScript 
-	local script = Instance.new('LocalScript', _4)
-
-	script.Parent.FocusLost:connect(
-		function(enterPressed)
-			if enterPressed then
-				game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://"..script.Parent.Text
-			end
-		end
-	)
-end
-coroutine.wrap(LXTXDH_fake_script)()
-local function IQXF_fake_script() -- _3.LocalScript 
-	local script = Instance.new('LocalScript', _3)
-
-	script.Parent.FocusLost:connect(
-		function(enterPressed)
-			if enterPressed then
-				game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://"..script.Parent.Text
-			end
-		end
-	)
-end
-coroutine.wrap(IQXF_fake_script)()
-local function UGBIA_fake_script() -- _1.LocalScript 
-	local script = Instance.new('LocalScript', _1)
-
-	script.Parent.FocusLost:connect(
-		function(enterPressed)
-			if enterPressed then
-				game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://"..script.Parent.Text
-				game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://"..script.Parent.Text
-			end
-		end
-	)
-end
-coroutine.wrap(UGBIA_fake_script)()
-local function JKJJPV_fake_script() -- _5.LocalScript 
-	local script = Instance.new('LocalScript', _5)
-
-	script.Parent.FocusLost:connect(
-		function(enterPressed)
-			if enterPressed then
-				game.Players.LocalPlayer.Character.Animate.sit.SitAnim.AnimationId = "rbxassetid://"..script.Parent.Text
-			end
-		end
-	)
-end
-coroutine.wrap(JKJJPV_fake_script)()
-local function RGKPLH_fake_script() -- _6.LocalScript 
-	local script = Instance.new('LocalScript', _6)
-
-	script.Parent.FocusLost:connect(
-		function(enterPressed)
-			if enterPressed then
-				game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://"..script.Parent.Text
-			end
-		end
-	)
-end
-coroutine.wrap(RGKPLH_fake_script)()
-local function UJYM_fake_script() -- _7.LocalScript 
-	local script = Instance.new('LocalScript', _7)
-
-	script.Parent.FocusLost:connect(
-		function(enterPressed)
-			if enterPressed then
-				game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://"..script.Parent.Text
-			end
-		end
-	)
-end
-coroutine.wrap(UJYM_fake_script)()
-local function PFNTXC_fake_script() -- Frame.Dragify 
-	local script = Instance.new('LocalScript', Frame)
-
-	local UIS = game:GetService("UserInputService")
-	function dragify(Frame)
-	    dragToggle = nil
-	    local dragSpeed = 0
-	    dragInput = nil
-	    dragStart = nil
-	    local dragPos = nil
-	    function updateInput(input)
-	        local Delta = input.Position - dragStart
-	        local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
-	        game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.25), {Position = Position}):Play()
-	    end
-	    Frame.InputBegan:Connect(function(input)
-	        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
-	            dragToggle = true
-	            dragStart = input.Position
-	            startPos = Frame.Position
-	            input.Changed:Connect(function()
-	                if input.UserInputState == Enum.UserInputState.End then
-	                    dragToggle = false
-	                end
-	            end)
-	        end
-	    end)
-	    Frame.InputChanged:Connect(function(input)
-	        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-	            dragInput = input
-	        end
-	    end)
-	    game:GetService("UserInputService").InputChanged:Connect(function(input)
-	        if input == dragInput and dragToggle then
-	            updateInput(input)
-	        end
-	    end)
 	end
-	
-	dragify(script.Parent)
-end
-coroutine.wrap(PFNTXC_fake_script)()
+end)
+
+local Bind = Category:AddBind("Bind", Enum.KeyCode.RightShift, function()
+	print("Bind Pressed")
+end)
