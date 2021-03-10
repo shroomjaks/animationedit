@@ -188,7 +188,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 												game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://5319852613"
 											else if name == "Popstar" then
 													game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://1212900985"
-													game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://1212954651"
+													game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://1212900985"
 													game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://1212980348"
 													game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://1212980338"
 													game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://1212954642"
