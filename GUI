@@ -36,7 +36,7 @@ local Box = Category:AddBox("Climb", function(str)
 end)
 
 local Box = Category:AddBox("Fall", function(str)
-	game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://"..str
+	game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://"..str
 end)
 
 local Box = Category:AddBox("Sit", function(str)
@@ -83,7 +83,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 		game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://891636393"
 		game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://891627522"
 		game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://891609353"
-		game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://891617961"
+		game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://891617961"
 		game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://891639666"
 		game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://891663592"
 	else if name == "Bubbly" then
@@ -93,7 +93,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 			game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://910034870"
 			game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://910016857"
 			game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://909997997"
-			game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://910001910"
+			game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://910001910"
 			game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://910028158"
 			game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://910030921"
 		else if name == "Confident" then
@@ -103,7 +103,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 				game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://1070017263"
 				game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://1069984524"
 				game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://1069946257"
-				game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://1069973677"
+				game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://1069973677"
 				game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://1070009914"
 				game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://1070012133"
 			else if name == "Cartoony" then
@@ -113,7 +113,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 					game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://742640026"
 					game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://742637942"
 					game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://742636889"
-					game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://742637151"
+					game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://742637151"
 					game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://742639220"
 					game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://742639812"
 				else if name == "Cowboy" then
@@ -123,7 +123,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 						game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://1014421541"
 						game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://1014394726"
 						game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://1014380606"
-						game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://1014384571"
+						game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://1014384571"
 						game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://1014406523"
 						game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://1014411816"
 					else if name == "Elder" then
@@ -133,7 +133,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 							game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://845403856"
 							game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://845398858"
 							game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://845392038"
-							game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://845396048"
+							game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://845396048"
 							game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://845401742"
 							game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://845403127"
 						else if name == "Knight" then
@@ -143,7 +143,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 								game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://657552124"
 								game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://658409194"
 								game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://658360781"
-								game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://657600338"
+								game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://657600338"
 								game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://657560551"
 								game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://657557095"
 							else if name == "Levitation" then
@@ -153,7 +153,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 									game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://616013216"
 									game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://616008936"
 									game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://616003713"
-									game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://616005863"
+									game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://616005863"
 									game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://616011509"
 									game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://616012453"
 								else if name == "Mage" then
@@ -163,7 +163,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 										game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://707897309"
 										game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://707853694"
 										game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://707826056"
-										game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://707829716"
+										game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://707829716"
 										game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://707876443"
 										game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://707894699"
 									else if name == "Ninja" then
@@ -173,7 +173,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 											game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://656121766"
 											game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://656117878"
 											game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://656114359"
-											game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://656115606"
+											game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://656115606"
 											game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://656119721"
 											game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://656121397"
 										else if name == "Oldschool" then
@@ -183,7 +183,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 												game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://5319847204"
 												game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://5319841935"
 												game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://5319816685"
-												game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://5319839762"
+												game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://5319839762"
 												game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://5319850266"
 												game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://5319852613"
 											else if name == "Popstar" then
@@ -193,7 +193,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 													game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://1212980338"
 													game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://1212954642"
 													game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://1213044953"
-													game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://1212900995"
+													game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://1212900995"
 													game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://1212852603"
 													game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://1212998578"
 												else if name == "Pirate" then
@@ -203,7 +203,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 														game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://750785693"
 														game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://750782230"
 														game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://750779899"
-														game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://750780242"
+														game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://750780242"
 														game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://750784579"
 														game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://750785176"
 													else if name == "Patrol" then
@@ -213,7 +213,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 															game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://1151231493"
 															game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://1150944216"
 															game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://1148811837"
-															game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://1148863382"
+															game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://1148863382"
 															game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://1151204998"
 															game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://1151221899"
 														else if name == "Princess" then
@@ -223,7 +223,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 																game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://941028902"
 																game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://941008832"
 																game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://940996062"
-																game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://941000007"
+																game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://941000007"
 																game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://941018893"
 																game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://941025398"
 															else if name == "Robot" then
@@ -233,7 +233,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 																	game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://616095330"
 																	game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://616090535"
 																	game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://616086039"
-																	game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://616087089"
+																	game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://616087089"
 																	game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://616092998"
 																	game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://616094091"
 																else if name == "Stylish" then
@@ -243,7 +243,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 																		game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://616146177"
 																		game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://616139451"
 																		game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://616133594"
-																		game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://616134815"
+																		game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://616134815"
 																		game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://616143378"
 																		game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://616144772"
 																	else if name == "Sneaky" then
@@ -253,7 +253,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 																			game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://1132510133"
 																			game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://1132489853"
 																			game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://1132461372"
-																			game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://1132469004"
+																			game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://1132469004"
 																			game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://1132500520"
 																			game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://1132506407"
 																		else if name == "Superhero" then
@@ -263,7 +263,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 																				game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://616122287"
 																				game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://616115533"
 																				game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://616104706"
-																				game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://616108001"
+																				game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://616108001"
 																				game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://616119360"
 																				game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://616120861"
 																			else if name == "Toy" then
@@ -273,7 +273,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 																					game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://782843345"
 																					game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://782847020"
 																					game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://782843869"
-																					game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://782846423"
+																					game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://782846423"
 																					game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://782844582"
 																					game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://782845186"
 																				else if name == "Vampire" then
@@ -283,7 +283,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 																						game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://1083473930"
 																						game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://1083455352"
 																						game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://1083439238"
-																						game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://1083443587"
+																						game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://1083443587"
 																						game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://1083464683"
 																						game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://1083467779"
 																					else if name == "Werewolf" then
@@ -293,7 +293,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 																							game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://1083178339"
 																							game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://1083218792"
 																							game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://1083182000"
-																							game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://1083189019"
+																							game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://1083189019"
 																							game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://1083222527"
 																							game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://1083225406"
 																						else if name == "Zombie" then
@@ -303,7 +303,7 @@ local Dropdown = Category:AddDropdown("Animation Packages", {
 																								game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://616168032"
 																								game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://616161997"
 																								game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://616156119"
-																								game.Players.LocalPlayer.Character.Animate.fall.fall.AnimationId = "rbxassetid://616157476"
+																								game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://616157476"
 																								game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://616165109"
 																								game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://616166655"
 																							end
