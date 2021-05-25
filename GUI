@@ -18,6 +18,9 @@ local Label = Category:AddLabel("(Only works with animations made by ROBLOX)")
 
 local Box = Category:AddBox("Idle", function(str)
 	Animate.idle.Animation1.AnimationId = "rbxassetid://"..str
+end)
+
+local Box = Category:AddBox("Idle2", function(str)
 	Animate.idle.Animation2.AnimationId = "rbxassetid://"..str
 end)
 
