@@ -13,6 +13,7 @@ local Tab = Gui:AddTab("Home")
 
 local Category = Tab:AddCategory("Animations")
 
+local Label = Category:AddLabel("Enable R15 for this to work.")
 local Label = Category:AddLabel("(Only works with animations made by ROBLOX)")
 
 local Box = Category:AddBox("Idle", function(str)
